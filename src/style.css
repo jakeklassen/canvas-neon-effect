@@ -1,0 +1,23 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#game-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+#canvas {
+  background-color: black;
+  margin: auto;
+  padding: 0;
+  display: block;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+}
