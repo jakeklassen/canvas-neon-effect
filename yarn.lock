@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@tweakpane/core/-/core-1.0.6.tgz#cfdecd9612caab72f25abc60bfab9df2c1381f4c"
   integrity sha512-Q5331dFAgGyLvQHzrUdK11FV5nX7UTucW2x9w/Nl0h2zd/qtxs9mtbYSU5xEGnj5mtuI095CMV3mcQjYpyTCkQ==
 
-"@tweakpane/plugin-essentials@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@tweakpane/plugin-essentials/-/plugin-essentials-0.1.3.tgz#3bb3ca6c0f18a1c74e3757ba12f0a673cceca1e8"
-  integrity sha512-iSf90Ap0TqbmG/KDKmYuxqNl7esp/aS5dVllS8bj9AANHHUsSr+iY7FMdJnaZzDCWD1zZJkZ1Uqs5fy+ftbSOg==
+"@tweakpane/plugin-essentials@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@tweakpane/plugin-essentials/-/plugin-essentials-0.1.4.tgz#144b54dfe274bb1c161285c358268573e039cb99"
+  integrity sha512-beJWDrTo6a29eh1L5AFsiybsiWL2BFMN+49dwAzccnR7vr6uXy3qxJIZVr3J91KXZwDEg1XZ+ZW301Sz+xTBqw==
 
 contro@^2.2.0:
   version "2.2.0"
