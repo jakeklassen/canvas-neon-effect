@@ -7,13 +7,13 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "typescript": "^4.8.3",
-    "vite": "^3.1.3"
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4"
   },
   "dependencies": {
-    "@tweakpane/core": "^1.1.0",
-    "@tweakpane/plugin-essentials": "^0.1.5",
+    "@tweakpane/core": "^1.1.4",
+    "@tweakpane/plugin-essentials": "^0.1.8",
     "contro": "^2.2.0",
-    "tweakpane": "^3.1.0"
+    "tweakpane": "^3.1.4"
   }
 }
