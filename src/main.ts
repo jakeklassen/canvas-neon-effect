@@ -74,8 +74,6 @@ const player = new Player(
 
 const COLORS = ['red', 'green', 'blue', 'cyan'];
 
-// #endregion
-
 const bullets = Array.from(
   { length: 200 },
   () =>
