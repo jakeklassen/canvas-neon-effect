@@ -111,6 +111,6 @@ export class Player {
       false,
     );
     context.stroke();
-    context.restore();
+    // context.restore();
   }
 }
