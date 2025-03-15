@@ -7,13 +7,33 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "typescript": "^5.7.3",
-    "vite": "^6.1.0"
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2"
   },
   "dependencies": {
     "@tweakpane/core": "^1.1.8",
     "@tweakpane/plugin-essentials": "^0.1.8",
     "contro": "^2.2.0",
     "tweakpane": "^3.1.9"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@esbuild/linux-x64",
+      "@rollup/rollup-linux-x64-gnu",
+      "@rollup/rollup-linux-x64-musl",
+      "@tweakpane/core",
+      "@tweakpane/plugin-essentials",
+      "@types/estree",
+      "contro",
+      "esbuild",
+      "nanoid",
+      "picocolors",
+      "postcss",
+      "rollup",
+      "source-map-js",
+      "tweakpane",
+      "typescript",
+      "vite"
+    ]
   }
 }
