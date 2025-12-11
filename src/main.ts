@@ -1,5 +1,5 @@
 import * as EssentialsPlugin from '@tweakpane/plugin-essentials';
-import { Keyboard } from 'contro';
+import { Gamepad, Keyboard, or } from './lib/contro';
 import { Pane } from 'tweakpane';
 import { Bullet } from './entities/bullet';
 import { Player } from './entities/player';
@@ -27,11 +27,16 @@ pane.addMonitor(
 );
 
 const keyboard = new Keyboard();
+const gamepad = new Gamepad();
+
 const controls = {
-  up: keyboard.key('up'),
-  down: keyboard.key('down'),
-  left: keyboard.key('left'),
-  right: keyboard.key('right'),
+  up: or(keyboard.key('up'), gamepad.button('DpadUp')),
+  down: or(keyboard.key('down'), gamepad.button('DpadDown')),
+  left: or(keyboard.key('left'), gamepad.button('DpadLeft')),
+  right: or(keyboard.key('right'), gamepad.button('DpadRight')),
+  fire: or(keyboard.key('z'), gamepad.button('RT')),
+  leftStick: gamepad.stick('left'),
+  rightStick: gamepad.stick('right'),
 };
 
 const canvas = document.querySelector<HTMLCanvasElement>('#canvas')!;
@@ -100,6 +105,15 @@ function frame(hrt: DOMHighResTimeStamp) {
   dtAccumulator += dt;
 
   while (dtAccumulator >= step) {
+    // Save previous state before updating
+    player.savePreviousState();
+    for (const bullet of bullets) {
+      bullet.savePreviousState();
+    }
+    for (const bullet of player.bullets) {
+      bullet.savePreviousState();
+    }
+
     dtAccumulator -= step;
 
     player.update(step);
@@ -107,17 +121,32 @@ function frame(hrt: DOMHighResTimeStamp) {
     for (const bullet of bullets) {
       bullet.update(step);
     }
+    for (const bullet of player.bullets) {
+      bullet.update(step);
+    }
   }
+
+  // Calculate interpolation factor (how far between physics steps we are)
+  const alpha = dtAccumulator / step;
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  // Reset context state for player
+  ctx.globalAlpha = 1;
   ctx.shadowColor = 'red';
   ctx.shadowBlur = 6;
 
-  player.draw(ctx);
+  player.draw(ctx, alpha);
+
+  // Disable shadow for bullets (they have pre-baked glow)
+  ctx.shadowBlur = 0;
 
   for (const bullet of bullets) {
-    bullet.draw(ctx);
+    bullet.draw(ctx, alpha);
+  }
+
+  for (const bullet of player.bullets) {
+    bullet.draw(ctx, alpha);
   }
 
   last = hrt;
