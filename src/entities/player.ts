@@ -109,9 +109,8 @@ export class Player {
       this.shotTimer = this.shotTimerMax;
 
       const bulletSpeed = 600;
-      // Calculate bullet velocity based on player rotation + player velocity for consistent spacing
-      const bulletVelX = Math.cos(this.rotation) * bulletSpeed + this.currentVelocity.x;
-      const bulletVelY = Math.sin(this.rotation) * bulletSpeed + this.currentVelocity.y;
+      const bulletVelX = Math.cos(this.rotation) * bulletSpeed;
+      const bulletVelY = Math.sin(this.rotation) * bulletSpeed;
 
       // Fire from shield position (in front of player)
       const shieldOffset = 28;

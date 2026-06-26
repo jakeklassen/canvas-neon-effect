@@ -14,7 +14,7 @@ const pane = new Pane({
 
 pane.registerPlugin(EssentialsPlugin);
 
-pane.addMonitor(
+pane.addBinding(
   {
     get time() {
       return new Date().toLocaleTimeString();
@@ -22,6 +22,7 @@ pane.addMonitor(
   },
   'time',
   {
+    readonly: true,
     interval: 1_000,
   },
 );

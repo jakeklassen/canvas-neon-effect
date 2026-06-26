@@ -1,37 +1,21 @@
 {
   "name": "canvas-neon-effect",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
-    "vite": "^7.2.7"
+    "@types/node": "^26.0.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.0"
   },
   "dependencies": {
-    "@tweakpane/core": "^1.1.8",
-    "@tweakpane/plugin-essentials": "^0.1.8",
-    "tweakpane": "^3.1.9"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@esbuild/linux-x64",
-      "@rollup/rollup-linux-x64-gnu",
-      "@rollup/rollup-linux-x64-musl",
-      "@tweakpane/core",
-      "@tweakpane/plugin-essentials",
-      "@types/estree",
-      "esbuild",
-      "nanoid",
-      "picocolors",
-      "postcss",
-      "rollup",
-      "source-map-js",
-      "tweakpane",
-      "typescript",
-      "vite"
-    ]
+    "@tweakpane/core": "^2.0.5",
+    "@tweakpane/plugin-essentials": "^0.2.1",
+    "canvas": "^3.2.3",
+    "tweakpane": "^4.0.5"
   }
 }
